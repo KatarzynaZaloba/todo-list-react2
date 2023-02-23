@@ -1,7 +1,7 @@
 {
   "name": "todo-list-react2",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "homepage": "https://katarzynazaloba.github.io/todo-list-react2/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
