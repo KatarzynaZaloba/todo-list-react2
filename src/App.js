@@ -6,16 +6,19 @@ import Section from "./Section";
 import Header from "./Header";
 import Container from "./Container";
 
+const getInitialTasks = () => {
+  const tasksFromLocalStorage = localStorage.getItem("tasks");
+
+  return tasksFromLocalStorage
+    ? JSON.parse(tasksFromLocalStorage)
+    : [];
+};
+
 function App() {
 
   const [hideDone, setHideDone] = useState(false);
-
-  const tasksFromLocalStorage = localStorage.getItem("tasks");
-
   const [tasks, setTasks] = useState(
-    tasksFromLocalStorage
-    ? JSON.parse(tasksFromLocalStorage)
-    : []
+    getInitialTasks
   );
 
   useEffect(() => {
@@ -43,7 +46,7 @@ function App() {
 
   const setAllDone = () => {
     setTasks(tasks => tasks.map(task => ({
-      ...task, 
+      ...task,
       done: true,
     })));
   };
@@ -54,39 +57,39 @@ function App() {
       {
         content,
         done: false,
-        id: tasks.length ? tasks[tasks.length -1].id + 1 : 1,
+        id: tasks.length ? tasks[tasks.length - 1].id + 1 : 1,
       },
     ]);
   };
-  
+
   return (
-      <Container>
-        <Header
-          title="Lista zadań" />
+    <Container>
+      <Header
+        title="Lista zadań" />
 
-        <Section
-          title="Dodaj nowe zadanie"
-          body={<Form addNewTask={addNewTask} />}
-        />
+      <Section
+        title="Dodaj nowe zadanie"
+        body={<Form addNewTask={addNewTask} />}
+      />
 
-        <Section
-          title="Lista zadań"
-          body={
-            <Tasks
-              tasks={tasks}
-              hideDone={hideDone}
-              removeTask={removeTask}
-              toggleTaskDone={toggleTaskDone} />
-          }
-          extraHeaderContent={
-            <Buttons
-              tasks={tasks}
-              hideDone={hideDone}
-              toggleHideDone={toggleHideDone}
-              setAllDone={setAllDone} />  
-          }
-        />
-      </Container>
+      <Section
+        title="Lista zadań"
+        body={
+          <Tasks
+            tasks={tasks}
+            hideDone={hideDone}
+            removeTask={removeTask}
+            toggleTaskDone={toggleTaskDone} />
+        }
+        extraHeaderContent={
+          <Buttons
+            tasks={tasks}
+            hideDone={hideDone}
+            toggleHideDone={toggleHideDone}
+            setAllDone={setAllDone} />
+        }
+      />
+    </Container>
   );
 }
 
