@@ -4,34 +4,29 @@ export const StyledForm = styled.form`
     display: grid;
     grid-template-columns: 1fr auto;
     grid-gap: 20px;
-    padding: 20px;
-    @media (max-width: 767px) {
-    grid-template-columns: 1fr;
-}
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+        grid-template-columns: 1fr;
+    }
 `;
 
 export const Input = styled.input`
     padding: 10px;
-    border: 1px solid hsl(0, 0%, 83%);
+    border: 1px solid ${({ theme }) => theme.color.alto};
 `;
 
-export const AddButton = styled.button`
-    padding: 10px;
+export const Button = styled.button`
+    background: ${({ theme }) => theme.color.teal};
+    color: ${({ theme }) => theme.color.white};
     border: none;
-    background-color: hsl(180, 100%, 25%);
-    color: white;
-    transition: 1s;
-    cursor: pointer;
-    &:hover {
-        background-color: hsl(180, 100%, 30%);
-        transform: scale(1.1);
+    padding: 10px;
+    transition: 0.3s;
+    padding: 10px;
+    &:hover{
+     filter: brightness(110%);
+     cursor: pointer;
+     transform: scale(1.1); 
     }
-    &:active {
-        background-color: hsl(180, 100%, 35%);
+    &:active{
+     filter: brightness(120%); 
     }
-    @media (max-width: 767px) {
-    &:hover {
-        transform: scaleY(1.1);
-    }
-}
 `;

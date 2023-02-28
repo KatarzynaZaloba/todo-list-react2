@@ -1,21 +1,23 @@
-import React from "react";
-import { ButtonList, StyledButton } from "./styled";
+import { Wrapper, Button } from "./styled";
 
 const Buttons = ({ tasks, hideDone, toggleHideDone, setAllDone }) => (
-  <ButtonList>
-    {tasks.length > 0 && (
-      <React.Fragment>
-        <StyledButton onClick={toggleHideDone}>
-          {hideDone === false ? "Ukryj" : "Pokaż"} ukończone
-        </StyledButton>
-        <StyledButton
-          onClick={setAllDone}
-          disabled={tasks.every(({ done }) => done)}
-        >
-          Ukończ wszystkie
-        </StyledButton>
-      </React.Fragment>
+  <Wrapper>
+   {tasks.length > 0 && (
+     <>
+       <Button 
+       onClick={toggleHideDone}
+      >
+         {hideDone ? "Pokaż" : "Ukryj"} ukończone
+       </Button>
+       <Button
+         onClick={setAllDone}
+         disabled={tasks.every(({ done }) => done)} 
+       >
+         Ukończ wszystkie
+       </Button>
+     </>
     )}
-  </ButtonList>
+  </Wrapper>
 );
+
 export default Buttons;

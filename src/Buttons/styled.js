@@ -1,27 +1,29 @@
 import styled from "styled-components";
 
-export const ButtonList = styled.div`
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 20px;
-    @media (max-width: 767px) {
-        grid-template-columns: 1fr;
-}
+export const Wrapper = styled.div`
+    padding: 10px;
+    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+    } 
 `;
 
-export const StyledButton = styled.button`
+export const Button = styled.button`
+    background: transparent;
+    color: ${({ theme }) => theme.color.teal};
     border: none;
-    background-color: transparent;
-    color: hsl(180, 100%, 25%);
-    transition: 1s;
+    margin: auto;
     cursor: pointer;
-    &:hover {
-        color: hsl(180, 100%, 30%);
+    transition: filter 0.3s;
+    &:hover{
+     filter: brightness(110%);
     }
-    &:active {
-        color: hsl(180, 100%, 35%);
+    &:active{
+     filter: brightness(120%);  
     }
-    &:disabled {
-        color: lightgray;
+    &:disabled{
+     color: ${({ theme }) => theme.color.silver};
+     cursor: not-allowed;
     }
 `;
