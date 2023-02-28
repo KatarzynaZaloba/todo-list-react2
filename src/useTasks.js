@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+
+
 export const useTasks = () => {
   const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem("tasks")) || []);
   const [hideDone, setHideDone] = useState(JSON.parse(localStorage.getItem("hideDone")) || false);
