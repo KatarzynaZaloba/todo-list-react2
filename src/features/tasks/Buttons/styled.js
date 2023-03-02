@@ -9,9 +9,10 @@ export const Wrapper = styled.div`
     } 
 `;
 
-export const Button = styled.button`
+export const StyledButton = styled.button`
     background: transparent;
     color: ${({ theme }) => theme.color.teal};
+    font-size: 16px;
     border: none;
     margin: auto;
     cursor: pointer;
