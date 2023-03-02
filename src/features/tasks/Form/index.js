@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { useDispatch } from "react-redux";
-import { nanoid } from "@reduxjs/toolkit"; 
+import { nanoid } from "@reduxjs/toolkit";
 import { addTask } from "../tasksSlice";
 import { StyledForm, StyledInput, Button } from "./styled";
 
@@ -18,7 +18,7 @@ const Form = () => {
     if (!trimmedNewTaskContent) {
       return;
     }
-     
+
     dispatch(addTask({
       content: trimmedNewTaskContent,
       done: false,
@@ -30,7 +30,9 @@ const Form = () => {
   };
 
   return (
-    <StyledForm onSubmit={onFormSubmit}>
+    <StyledForm
+      onSubmit={onFormSubmit}
+      >
       <StyledInput
         value={newTaskContent}
         autoFocus
@@ -38,7 +40,9 @@ const Form = () => {
         placeholder="Co jest do zrobienia?"
         onChange={({ target }) => setNewTaskContent(target.value)}
       />
-      <Button>Dodaj zadanie</Button>
+      <Button>
+        Dodaj zadanie
+      </Button>
     </StyledForm>
   );
 };
