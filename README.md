@@ -6,9 +6,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## **How it works**
 
-![gif](./public/gif.gif)
+![gif](./src/images/gif.gif)
 
-It was really fun for me to taking care of my Task List. It's in Polish. You can add, remove and tick there your tasks. 
+The task list is in Polish. You can add there your task, select it as done, delete task, search tasks by keyword, set all as done by clicking on "Ukończ wszystkie" and hide all of done tasks by clicking "Ukryj ukończone". In the navbar there are hiperlinks to the author and to tasks.
 
  ## **Technologies used in the project**
 To create the application I have used:
@@ -20,8 +20,7 @@ To create the application I have used:
 - ES6+ features
 - GIT
 - Markdown
-- Redux Saga
-- Redux Router
+- Redux.
 
 ## **Available Scripts**
 
@@ -60,4 +59,4 @@ In my free time I am jogging through the forest near my home - in my opinion it'
 
 That's it from me for now. If you would like to know more about my eperience, please visit my [Linkedin](https://www.linkedin.com/in/katarzyna-zaloba/) .
 
-![Katarzyna](./public/Kate.jpg)
+![Katarzyna](./src/images//Kate.jpg)
