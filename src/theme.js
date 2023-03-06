@@ -1,15 +1,12 @@
 export const theme = {
     color: {
-        black: "#000",
-        silver: "#ccc",
-        alto: "#ddd",
-        gallery: "#eee",
-        white: "#fff",
+        white: "#FFFFFF",
+        alto: "#DDDADA",
         teal: "#008080",
-        crimson: "#db143c",
-        forestGreen: "#228c22",
+        forestGreen: "#229622",
+        redRibbon: "#E00B35",
     },
     breakpoint: {
-        mobileMax: 767, 
+        mobileMax: 767,
     },
 };
