@@ -20,6 +20,8 @@ To create the application I have used:
 - ES6+ features
 - GIT
 - Markdown
+- Redux Saga
+- Redux Router
 
 ## **Available Scripts**
 
